@@ -21,32 +21,43 @@ namespace AdventureGame
 
 public class Pet
 {
-
+    static Player player;
     static Random gen = new Random();
+    public static int totalPets = 0;
+
+    //bool hasAardvark = false; 
+    //bool hasCapybara = false;
+    //bool hasBeaver = false;
+    //bool hasQuail = false;
+    //bool hasSnail = false; 
+    //bool hasAxolotl = false;
+   
+    public Pet(Player player)
+    {
+        player = player;
+    
+    }
 
     public void PetGenerator1()
     {
-        var Pets = new List<Action> { IntroAardvark, IntroCapybara};
+        var Pets = new List<Action> { IntroAardvark, IntroCapybara}; 
         Pets[gen.Next(Pets.Count)]();
         ReadKey();
-        
+
         //WriteLine($"{Pets[random.Next(Pets.Count)]();}");
 
     }
 
     public void PetGenerator2()
     {
-        var Pets = new List<Action> { IntroBeaver, IntroQuail };
+        var Pets = new List<Action> {  IntroSnail, IntroAxolotl };
         Pets[gen.Next(Pets.Count)]();
         ReadKey();
-       
-        //WriteLine($"{Pets[random.Next(Pets.Count)]();}");
-
     }
 
     public void PetGenerator3()
     {
-        var Pets = new List<Action> { IntroSnail, IntroAxolotl };
+        var Pets = new List<Action> { IntroBeaver };//IntroQuail
         Pets[gen.Next(Pets.Count)]();
         ReadKey();
 
@@ -54,67 +65,71 @@ public class Pet
 
     }
 
-    //constructor
-    //public Pet(string petType)
+   
+    Art currentArt = new Art();
+   
 
-    //{
-    //   // PetType = petType;
-
-    //}
-
-    public static int totalPets = 0;
-
-    Art currentArt = new Art(); //opening art function for all animals
     public void IntroAardvark()
     {
         Clear();
         totalPets += 1;
+        //hasCapybara = true;
         Utility.TopSpaces();
         Utility.Spacing($"You have found a friend!");
         ReadKey();
         Clear();
 
-
         Clear();
-        ForegroundColor = ConsoleColor.Blue;
-        BackgroundColor = ConsoleColor.Black;
+        ForegroundColor = ConsoleColor.DarkGray;
+        BackgroundColor = ConsoleColor.Cyan;
         Clear();
         currentArt.aardvarkArt();
+        ReadKey();
+        Clear();
         ForegroundColor = ConsoleColor.White;
-        Utility.Spacing("It's a Arnie the Aardvark!");
+        Utility.TopSpaces();
+        Utility.Spacing("It's Arnie the Aardvark!");
+        ReadKey();
+        Utility.Spacing("\"Arnie:'There is safety among numbers. Good to see you my friend.'");
         ReadKey();
         Clear();
 
         Utility.TopSpaces();
-        Utility.Spacing($"You now have {totalPets} friends");
+        Utility.Spacing($"You have found {totalPets} of your friends");
         Utility.Spacing("You need 3 friends to get home quickly");
-        Utility.Spacing("Press enter to continue your journey...");
-       
+        //Utility.Spacing("Press enter to continue your journey...");
     }
+
 
     public void IntroCapybara()
     {
         Clear();
         totalPets += 1;
+        //hasCapybara = true;
         Utility.TopSpaces();
         Utility.Spacing($"You have found a friend!");
         ReadKey();
         Clear();
 
         Clear();
-        ForegroundColor = ConsoleColor.Red;
-        BackgroundColor = ConsoleColor.Black;
+        ForegroundColor = ConsoleColor.DarkGray;
+        BackgroundColor = ConsoleColor.Cyan;
         Clear();
         currentArt.capybaraArt();
+        ReadKey();
+        Clear();
         ForegroundColor = ConsoleColor.White;
-        Utility.Spacing("It's a Carmen the Capybara!");
+        Utility.TopSpaces();
+        Utility.Spacing("It's Carmen the Capybara!");
+        ReadKey();
+        Utility.Spacing("Carmen:'Are we far from home? Nevermind- we are together now.'");
         ReadKey();
         Clear();
 
         Utility.TopSpaces();
-        Utility.Spacing($"You now have {totalPets} friends");
+        Utility.Spacing($"You have found {totalPets} of your friends");
         Utility.Spacing("You need 3 friends to get home quickly");
-        Utility.Spacing("Press enter to continue your journey...");
+        //Utility.Spacing("Press enter to continue your journey...");
     }
 
     public void IntroBeaver()
@@ -128,19 +143,24 @@ public class Pet
 
 
         Clear();
-        ForegroundColor = ConsoleColor.Cyan;
-        BackgroundColor = ConsoleColor.Black;
+        ForegroundColor = ConsoleColor.DarkGreen;
+        BackgroundColor = ConsoleColor.Cyan;
         Clear();
         currentArt.beaverArt();
+        ReadKey();
+        Clear();
         ForegroundColor = ConsoleColor.White;
-        Utility.Spacing("It's a Barry the Beaver!");
+        Utility.TopSpaces();
+        Utility.Spacing("It's Barry the Beaver!");
+        ReadKey();
+        Utility.Spacing("Barry:'I was so scared! I thought I would never see you again.'");
         ReadKey();
         Clear();
 
         Utility.TopSpaces();
-        Utility.Spacing($"You now have {totalPets} friends");
+        Utility.Spacing($"You have found {totalPets} of your friends");
         Utility.Spacing("You need 3 friends to get home quickly");
-        Utility.Spacing("Press enter to continue your journey...");
+       // Utility.Spacing("Press enter to continue your journey...");
     }
 
     public void IntroQuail()
@@ -153,19 +173,24 @@ public class Pet
         Clear();
 
         Clear();
-        ForegroundColor = ConsoleColor.DarkRed;
-        BackgroundColor = ConsoleColor.Black;
+        ForegroundColor = ConsoleColor.DarkMagenta;
+        BackgroundColor = ConsoleColor.Cyan;
         Clear();
         currentArt.quailArt();
+        ReadKey();
+        Clear();
         ForegroundColor = ConsoleColor.White;
-        Utility.Spacing("It's a Quartz the Quail!");
+        Utility.TopSpaces();
+        Utility.Spacing("It's Quartz the Quail!");
+        ReadKey();
+        Utility.Spacing("Quartz:'Finally! I've been looking for you everywhere! I've missed you so much!'");
         ReadKey();
         Clear();
 
         Utility.TopSpaces();
-        Utility.Spacing($"You now have {totalPets} friends");
+        Utility.Spacing($"You have found {totalPets} of your friends");
         Utility.Spacing("You need 3 friends to get home quickly");
-        Utility.Spacing("Press enter to continue your journey...");
+        //Utility.Spacing("Press enter to continue your journey...");
     }
 
     public void IntroSnail()
@@ -179,18 +204,23 @@ public class Pet
 
         Clear();
         ForegroundColor = ConsoleColor.DarkYellow;
-        BackgroundColor = ConsoleColor.Black;
+        BackgroundColor = ConsoleColor.Cyan;
         Clear();
         currentArt.snailArt();
+        ReadKey();
+        Clear();
         ForegroundColor = ConsoleColor.White;
-        Utility.Spacing("It's a Sam the snail!");
+        Utility.TopSpaces();
+        Utility.Spacing("It's Sam the snail!");
+        ReadKey();
+        Utility.Spacing("Sam:'I've been trying to find you- it took me two weeks to make it down that giant sledding hill.'");
         ReadKey();
         Clear();
 
         Utility.TopSpaces();
-        Utility.Spacing($"You now have {totalPets} friends");
+        Utility.Spacing($"You have found {totalPets} of your friends");
         Utility.Spacing("You need 3 friends to get home quickly");
-        Utility.Spacing("Press enter to continue your journey...");
+        //Utility.Spacing("Press enter to continue your journey...");
 
         //ForegroundColor = ConsoleColor.Green;
         //BackgroundColor = ConsoleColor.Yellow;
@@ -198,8 +228,8 @@ public class Pet
     }
 
     public void IntroAxolotl()
-        
-{
+
+    {
         Clear();
         totalPets += 1;
         Utility.TopSpaces();
@@ -208,53 +238,85 @@ public class Pet
         Clear();
 
         Clear();
-                ForegroundColor = ConsoleColor.Magenta;
-                BackgroundColor = ConsoleColor.Black;
-                Clear();
-                currentArt.axolotlArt();
-                ForegroundColor = ConsoleColor.White;
-                WriteLine("It's a Albert the axolotl!");
-                ReadKey();
-                Clear();
+        ForegroundColor = ConsoleColor.Magenta;
+        BackgroundColor = ConsoleColor.Cyan;
+        Clear();
+        currentArt.axolotlArt();
+        ReadKey();
+        Clear();
+        ForegroundColor = ConsoleColor.White;
+        Utility.TopSpaces();
+        Utility.Spacing("It's Albert the axolotl!");
+        ReadKey();
+        Utility.Spacing("Albert:'I've been so lonely- you certainly took your time getting here.'");
+        ReadKey();
+        Clear();
 
         Utility.TopSpaces();
-        Utility.Spacing($"You now have {totalPets} friends");
+        Utility.Spacing($"You have found {totalPets} of your friends");
         Utility.Spacing("You need 3 friends to get home quickly");
-        Utility.Spacing("Press enter to continue your journey...");
+        //Utility.Spacing("Press enter to continue your journey...");
 
         //ForegroundColor = ConsoleColor.Green;
         //BackgroundColor = ConsoleColor.Yellow;
         //Clear();
     }
 
-   
 
+    public void CheckPets()
 
-        public void CheckPets()
     {
-        //used copilot
+        
         if (totalPets == 3)
         {
-            Utility.Spacing("Yay you have found all your friends! Now make it to the end of the forest!");
+            Utility.Spacing("Yay you have found all your friends!");
             ReadKey();
+            ForegroundColor = ConsoleColor.Yellow;
+            BackgroundColor = ConsoleColor.Blue;
+            Clear();
+            
+            
+            Utility.Spacing($"Congratulations! You have successfully made it home!");
+            WriteLine(@"
 
-            Game game = new Game();
-            game.endGame();
+                                                                 8o88o          __
+                                                               o88o           o688o)
+                                         '-,    .``'.          _o8o    .-.'-.(6886898o
+                                            \,'`   . \.  .----| |-.  ,'     o688868698o)
+                                           .'  /   :   '/          \'  \  (68968886)6/88o
+                                          /   '    '   /____________\   '.  866\88|889)
+                                         /    .    \   | ___   __   | .'  `   (969/9\
+                                         `           _ ||_|_| /  \  |______     \//  \
+                                        '.`""'.`,`'./_\||_|_| | .|  |______\.`.`||,`,'
+                                        `'^,_`'. ,""|O||______|  |__|======|,.',|| ,..
+                                        .'`. ""\'^,`.,'.`'``.'/==\.,.'`,.' `,' .||.,.`
+                                        `',`' `,'.^ '. ,.'`,/====\,' `,. ^, `.-',, `,
+                                        .,`^  `. `,`  ,  ,`/======\,  ,'  `'.,""  .DR.
+                                        Dariusz Ruman
+");//https://ascii.co.uk/art/houses
 
-          /*end game here 
-           * show end game 
-           * game.endgame + print a message explaining it
-           * 
-           * 
-           * */
+            Utility.Spacing("Press any key to exit game.");
+
+            ReadKey();
+            Environment.Exit(0); 
+
+            
+
+            /*end game here 
+             * show end game 
+             * game.endgame + print a message explaining it
+             * 
+             * 
+             * */
 
         }
-        else
+        else if (totalPets <= 2)
         {
-            
-            Utility.Spacing("You need more pets to advance");
+
+            Utility.Spacing("You have more friends to find."); 
         }
 
         ResetColor();
     }
+
 }

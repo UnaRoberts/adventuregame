@@ -13,20 +13,17 @@ namespace TriviaGame
 {
     internal class Game
     {
-        Art currentArt = new Art();
-        //int deathcount = 0;
-        private string GameTitle = "Forest Adventure";
-        private string Description = "Battle your friends for the top score in silly trivia";
-        //string PlayerName = "";// declaring character name here so I can use it everywhere 
-        Headings currentHeading = new Headings();
-        //public Game(){
-        //    startGame();
-        //}
 
-        Player player = new Player("PlayerName");
+
+        string name;
+        Headings currentHeading = new Headings();
+        static Player player;
+        Forest currentForest;
+        
         public void startGame()
 
         {
+            Art someArt = new Art();
             //changing window size
             //Console.SetWindowSize(80, 20);
 
@@ -36,13 +33,10 @@ namespace TriviaGame
             Clear();
 
 
-            //welcoming player (title, description, move on directive
-
-
+            Utility.TopSpaces();
             Utility.Spacing("Welcome to");
 
-            //Art currentArt = new Art();
-            currentArt.OpenGameTitleArt();
+            someArt.OpenGameTitleArt();
 
             Utility.Spacing("You are a cat and you and your friends have been stranded from your home.");
             Utility.Spacing("Now you need to make it back through the four seasonal forests to get back.");
@@ -53,27 +47,27 @@ namespace TriviaGame
             Utility.Spacing("To complete the game you must make it home, find all your friends and avoid death.");
             ForegroundColor = ConsoleColor.Cyan;
             
-            Utility.Spacing("If you find all of your friends, you will all collectively be able to make it home faster then alone.");
+            Utility.Spacing("If you find all of your friends, you will all be able to make it home faster together.");
             ForegroundColor = ConsoleColor.Yellow;
 
             Utility.Spacing("Since you are a cat, you have some extra lives.");
             Utility.Spacing("However, you long journey has been difficult and you only have 3 lives left.");
-            Utility.Spacing("If you die three times you hav elost the game.");
+            Utility.Spacing("If you die three times you have lost the game.");
             Utility.Spacing("When you die, you will be prompted to return to the Autumn forest");
-            Utility.Spacing("At any point, press enter to continue your journey.");
-
-
-
-            // you have made it home, but you do not have your friends! (prompt to restart and find them)
-
+            Utility.Spacing("At any point, press any key to continue your journey.");
 
             WriteLine("");
-            Utility.Spacing("Press enter to start your journey!");
+            Utility.Spacing("This game was created by Una Roberts.");
+            Utility.Spacing("Throughout the game there is art- most of the friends are made by Una Roberts and the rest has credits embedded in it.");
+
+            WriteLine("");
+            Utility.Spacing("Press any key to start your journey!");
 
             ReadKey();
             Clear();
         }
         //string PlayerName = ReadLine().Trim();
+
         public void greetPlayer()
         {
             ForegroundColor = ConsoleColor.Yellow;
@@ -81,14 +75,14 @@ namespace TriviaGame
             Clear();
 
             Utility.TopSpaces();
-            WriteLine("Enter Player Name...");
+
+            Write("                                                 Enter Player Name...");
             string playerName = ReadLine();
             player = new Player(playerName);
-
-            WriteLine("Awesome! Your Character name is " + player.Name);
+            name = player.Name;
+            
+            Utility.Spacing("Awesome! Your Player name is " + player.Name);
             ReadKey();
-            //WriteLine("Press enter to step foot into the Autum Forest!");
-            //ReadKey();
         }
 
         public void AutumnWelcome()
@@ -101,140 +95,15 @@ namespace TriviaGame
             Utility.Spacing($"Welcome to the Autumn forest {player.Name}");
             ReadKey();
         }
-
-        public void WinterWelcome()
+        public void EndingSequence()
         {
+            ForegroundColor = ConsoleColor.Yellow;
+            BackgroundColor = ConsoleColor.Blue;
             Clear();
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.BackgroundColor = ConsoleColor.White;
-            Clear();
-            currentHeading.WinterHeading();
-            Utility.Spacing($"Welcome to the Autumn forest {player.Name}");
-            ReadKey();
-        }
+            Utility.TopSpaces();
 
-        public void SpringWelcome()
-        {
-            Clear();
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
-            Clear();
-            currentHeading.SpringHeading();
-            Utility.Spacing($"Welcome to the Autumn forest {player.Name}");
-            ReadKey();
-        }
-
-        public void SummerWelcome()
-        {
-            Clear();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.BackgroundColor = ConsoleColor.Yellow;
-            Clear();
-            currentHeading.SummerHeading();
-            Utility.Spacing($"Welcome to the Autumn forest {player.Name}");
-            ReadKey();
-        }
-        public void playGame()
-        {
-            Forest currentForest = new Forest("Autumn");
-            AutumnWelcome();  //need t add the colors and make all of these in the game class 
-            currentForest.StartForest();
-            currentForest.forestTransition();
-
-            WinterWelcome();
-            Forest currentForest2 = new Forest("Winter");
-            currentForest2.StartForest();
-            currentForest2.forestTransition();
-
-            SpringWelcome();
-            Forest currentForest3 = new Forest("Spring");
-            currentForest3.StartForest();
-            currentForest3.forestTransition();
-
-            SummerWelcome();
-            Forest currentForest4 = new Forest("Summer");
-            currentForest4.StartForest();
-
-        }
-
-
-        
-
-        public void dying() // make this more artsy add that it makes your pets = to 0 
-        {
-            
-            //incrementDeathcount(); //adds another death
-
-
-            ForegroundColor = ConsoleColor.Red;
-            BackgroundColor = ConsoleColor.Black;
-            Clear();
-
-            Console.Beep();//credit
-
+            Utility.Spacing($"Congratulations{name}! You have successfully made it home!");
             WriteLine(@"
-
-      |\      _,,,---,,_
-      /,`.-'`'    -.  ;-;;,_
-     |,4-  ) )-,_. ,\ (  `'-'
-    '---''(_/--'  `-'\_)  Felix Lee 
-
-");//https://www.asciiart.eu/animals/cats (slightly edited for my purposes)
-
-            WriteLine("You died. Press enter to restart game");
-            player.deathcount++;
-
-            if (player.deathcount == 1)
-            {
-                currentArt.TwoHearts();
-
-                WriteLine($"You have died {player.deathcount} times. You have 2 lives left.");
-                
-            }
-
-            else if (player.deathcount == 2)
-            {
-                currentArt.OneHeart();
-                WriteLine($"You have died {player.deathcount} times. You have 1 lives left.");
-                //deathcount = 3;
-            }
-
-            else if (player.deathcount == 3)
-            {
-                WriteLine("You are out of lives! Press enter to exit game.");
-                WriteLine($"You have died {player.deathcount} times. You have 0 lives left.");
-                ReadKey();//idk how to finish thissss
-            }
-
-
-            ReadKey();
-            //Question dyingQuestion = new Question();
-            //dyingQuestion.AutumnQuestions();
-
-            Forest currentForest = new Forest("Autumn");
-            //currentForest.StartForest();
-            currentForest.returnToForestColors();
-            Question dyingQuestion = new Question();
-            dyingQuestion.AutumnQuestions();
-        }
-
-        //how do I use this???
-        
-
-
-
-        public int totalPets;
-        public void endGame()
-        {
-
-            if (totalPets == 3)//this is not working
-            {
-
-                ForegroundColor = ConsoleColor.Yellow;
-                BackgroundColor = ConsoleColor.Blue;
-                Clear();
-               Utility.Spacing($"Congratulations {player.Name}! You have successfully made it home!");
-                WriteLine(@"
 
                                                                  8o88o          __
                                                                o88o           o688o)
@@ -250,78 +119,143 @@ namespace TriviaGame
                                         `',`' `,'.^ '. ,.'`,/====\,' `,. ^, `.-',, `,
                                         .,`^  `. `,`  ,  ,`/======\,  ,'  `'.,""  .DR.
                                         Dariusz Ruman
-");//https://ascii.co.uk/art/houses
+");
+            
+            
+                        Utility.Spacing("However, you did not find all of your friends. You are so lonely without all of them...");
+            Utility.Spacing("If you want to find them, you can return to the start of the forest.");
+            Utility.Spacing("Press A to return to the forest, and B to end the game.");
 
-              
-               Utility.Spacing("Thanks for playing!");
-                ReadKey();
-                Utility.Spacing("Press any key to exit...");
-                ReadKey();
+            ConsoleKeyInfo input = ReadKey();
 
-            }
-
-            else 
+            if (input.Key == ConsoleKey.A)
             {
-                Utility.Spacing("U didnt win.sorry.");
+
+                Clear();
+                ForegroundColor = ConsoleColor.White;
+                BackgroundColor = ConsoleColor.Cyan;
+                Clear();
+                Utility.TopSpaces();
+                Utility.Spacing("Try making choices you have not yet tried- and pay close attention to the questions highlighted in this blue color.");
                 ReadKey();
-                Utility.Spacing("Thanks for playing!");
-                ReadKey();//this readkey will end the whole game 
+                Clear();
+               
+                Forest newForest = new Forest("Autumn", player);
+                AutumnWelcome();  //need t add the colors and make all of these in the game class 
+                newForest.StartForest();
+                newForest.forestTransition();
+
+                WinterWelcome();
+                Forest newForest2 = new Forest("Winter", player);
+                newForest2.StartForest();
+                newForest2.forestTransition();
+
+                SpringWelcome();
+                Forest newForest3 = new Forest("Spring", player);
+                newForest3.StartForest();
+                newForest3.forestTransition();
+
+                SummerWelcome();
+                Forest newForest4 = new Forest("Summer", player);
+                newForest4.StartForest();
             }
+            else if (input.Key == ConsoleKey.B)
+            {
 
+                Environment.Exit(0);
+                //print cottage at end (not in question, but as big finale scene )
 
+            }
         }
 
-
-
-
-
-
-
-            //make this run on the conditions that 1) they have ALL pets 2) they did not die too many times (this should run by itself)
-
-
-            /* this is for items!
-
-    Console.WriteLine(CharacterName + " you found some items in your journey:");
-
-    foreach (string item in Inventory)
-    {
-    Console.WriteLine(item);
-    }*/
-
-            /*if (Inventory.Contains("key"))
-    {
-    Console.ForegroundColor = ConsoleColor.Cyan;
-    Console.WriteLine("Congratulations you accomplished the goal! You found the key!");
-    Console.ResetColor();
-    }
-    else
-    {
-    Console.WriteLine("You didn't find the key... better luck next time!");
-    }*/
-
-
-
-
-            public void Play()
-        //this is not currently running - it has not been
-        //called- it is also from the trviai game and does not match my game
+        public void WinterWelcome()
         {
-            Title = GameTitle;
-            //WriteLine(GameTitleArt);
-            WriteLine($"Welcome to {GameTitle}!");
-            WriteLine(Description);
-
-            Write("What is your name: ");
-            string playerName = ReadLine();
-            WriteLine($"You said {playerName}");
-            //CurrentPlayer = new Player(playerName);
-            // WriteLine($"Welcome to {GameTitle}, {CurrentPlayer.Name}!");
-            //  WriteLine($"Your current score is {CurrentPlayer.Score}.");
-            WriteLine("Press and key to exit");
+            Clear();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.BackgroundColor = ConsoleColor.White;
+            Clear();
+            currentHeading.WinterHeading();
+            Utility.Spacing($"Welcome to the Winter forest {player.Name}");
             ReadKey();
-
         }
+
+        public void SpringWelcome()
+        {
+            Clear();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Clear();
+            currentHeading.SpringHeading();
+            Utility.Spacing($"Welcome to the Spring forest {player.Name}");
+            ReadKey();
+        }
+
+        public void SummerWelcome()
+        {
+            Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Clear();
+            currentHeading.SummerHeading();
+            Utility.Spacing($"Welcome to the Summer forest {player.Name}");
+            ReadKey();
+        }
+
+        
+        public void playGame()
+        {
+
+            Forest currentForest = new Forest("Autumn", player);
+            //AutumnWelcome();  //need t add the colors and make all of these in the game class 
+            //currentForest.StartForest();
+            //currentForest.forestTransition();
+
+
+            //WinterWelcome();
+            //Forest currentForest2 = new Forest("Winter", player);
+            //currentForest2.StartForest();
+            //currentForest2.forestTransition();
+
+
+            //SpringWelcome();
+            //Forest currentForest3 = new Forest("Spring", player);
+            //currentForest3.StartForest();
+            //currentForest3.forestTransition();
+
+            SummerWelcome();
+            Forest currentForest4 = new Forest("Summer", player);
+            currentForest4.StartForest();
+            EndingSequence();
+        }
+
+
     }
+
 }
+
+
+
+
+/* this is for items!
+
+Console.WriteLine(CharacterName + " you found some items in your journey:");
+
+foreach (string item in Inventory)
+{
+Console.WriteLine(item);
+}*/
+
+/*if (Inventory.Contains("key"))
+{
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Congratulations you accomplished the goal! You found the key!");
+Console.ResetColor();
+}
+else
+{
+Console.WriteLine("You didn't find the key... better luck next time!");
+}*/
+
+
+
 

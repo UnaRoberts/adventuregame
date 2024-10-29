@@ -13,12 +13,13 @@ namespace AdventureGame
     {
         public string ForestType;
         public string ColorTheme;
-        Game PlayerGame = new Game();
-
-        public Forest(string forestType)
+        //Game PlayerGame = new Game();
+        Player player;
+        public Forest(string forestType, Player player)
 
         {
             ForestType = forestType;
+            player = player;
 
         }
 
@@ -59,36 +60,9 @@ namespace AdventureGame
                         break;
                 }
 
-                //switch (ForestType)
-                //{
+               
 
-                //    case "Autumn":
-                //        WriteLine($"Welcome to the Autumn Forest!");// how camn I say the name here????
-                //        ReadKey(); 
-                //        Clear();
-                //        break;
-
-                //    case "Winter":
-                //        WriteLine("Welcome to the Winter Forest !");
-                //        ReadKey();
-                //        Clear();
-                //        break;
-
-                //    case "Spring":
-                //        WriteLine("Welcome to the Spring Forest!");
-                //        ReadKey();
-                //        Clear();
-                //        break;
-
-                //    case "Summer":
-                //        WriteLine("Welcome to the Summer Forest!");
-                //        ReadKey();
-                //        Clear();
-                //        break;
-
-                //}
-
-                Question currentQuestion = new Question();
+                Question currentQuestion = new Question(player);
 
                 switch (ForestType)
                 {
@@ -108,6 +82,7 @@ namespace AdventureGame
                         break;
 
                     case "Summer":
+                       
                         currentQuestion.SummerQuestions();
                         break;
                 }
@@ -133,17 +108,17 @@ namespace AdventureGame
                     Utility.Spacing("As you walk, the wind picks up, the air gets colder and the further you get, the icier the trees get.");
                     Utility.Spacing("The colorful leaves become few and far between and eventually they are completely gone.");
                     Utility.Spacing("The world around you turns icy and white and you begin to shiver. ");
+                   
                     break;
 
                 case "Winter":
                     Console.ForegroundColor = ConsoleColor.DarkBlue; 
-                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.BackgroundColor = ConsoleColor.Yellow;
                     Console.Clear();
                     Utility.TopSpaces();
                     Utility.Spacing("As you walk down the path, the air finally starts to feel warmer.");
-                    Utility.Spacing("As you look ahead there is less anmd less ice. ");
-                    Utility.Spacing("You start to see flower buds and greenery and a little later there are flowers.");
-                    Utility.Spacing("on the ground and the leaves on the trees are brigth green.");
+                    Utility.Spacing("As you look ahead there is less and less ice. ");
+                    Utility.Spacing("You start to see flower buds and greenery and later flowers start to bloom.");
                     break;
 
                 case "Spring":

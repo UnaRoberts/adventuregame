@@ -21,34 +21,55 @@ namespace AdventureGame
         static void Main()
         {
             Title = "Una's Forest Adventure";
-            //Console.Beep();
-            //Console.SetWindowSize(100, 40);
+
+            WriteLine("Hellow World");
+
 
             Game currentGame = new Game();
 
             currentGame.startGame();
             currentGame.greetPlayer();
             currentGame.playGame();
-            currentGame.endGame();
+
 
         }
 
     }
 }
 
-/* TO DO (fromm tutoring)
- * add readkeys in the long paragraphs 
- * make a better final screen w house 
- * create an avatar (?)
- * make animals have charcter 
+/* TO DO 
+ * need to store pets in inventory so that you can display them at the end (try bools)
  * 
- * consider making the dying class a static one frm utility 
+ *(fix headers)
+
+ * make sure end game is right and done
+ * add credits in comments 
  * 
- * Tutoring questions:
- * how to increment deaths
- * how do I make the dying class end end at 3 deaths 
- * how to make game end at 3 pets
- * change the individual letters (A and B) to be a different color - idk How to do this
- * how to make heading NOT repeat
- * does this way Im working the pets right now work or should I increment it
- * */
+ * can i track name to pets ending
+ 
+ *dont let name = empty 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * NOTES:
+ * need to fix the deaths (you added new instances of player so its gonna be wrong )
+ * now after you die, it move you to the next question- i can fix this but the going back to the startwas unpopular 
+  */
