@@ -1,8 +1,8 @@
-Adventure Game
-Welcome to Adventure Game, an immersive text-based adventure where players embark on an epic quest filled with challenges, mysteries, and exciting encounters. This game is built using [your tech stack (e.g., Python, JavaScript, Unity)] and offers a rich storytelling experience.
+Forest Adventure 
+Welcome to Forest Adventure, an immersive text-based adventure where players embark on an epic journey through forests based on the three different seasons! This game is built using C# in Visual Studio and offers a rich storytelling experience.
 
 Overview
-In Adventure Game, you will explore a fantastical world full of peril and discovery. Your goal is to navigate through different scenarios, solve puzzles, fight enemies, and make choices that shape the outcome of the game. Every decision matters, leading to multiple possible endings.
+In Forest Adventure, you will explore a fantastical world full of peril and discovery. Your goal is to navigate through different scenarios, find your friends, avoid death, and make choices that shape the outcome of the game. Every decision matters, leading to multiple possible endings.
 
 Features
 Interactive Story: Multiple branching storylines based on player choices.
