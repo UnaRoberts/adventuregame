@@ -10,14 +10,7 @@ using TriviaGame;
 using static System.Console;
 
 namespace AdventureGame
-{
-    //public class Item
-    //{
-    //    //constructor
-     
-    //}
-
-    }
+{   }
 
 public class Pet
 {
@@ -25,13 +18,6 @@ public class Pet
     static Random gen = new Random();
     public static int totalPets = 0;
 
-    //bool hasAardvark = false; 
-    //bool hasCapybara = false;
-    //bool hasBeaver = false;
-    //bool hasQuail = false;
-    //bool hasSnail = false; 
-    //bool hasAxolotl = false;
-   
     public Pet(Player player)
     {
         player = player;
@@ -43,9 +29,6 @@ public class Pet
         var Pets = new List<Action> { IntroAardvark, IntroCapybara}; 
         Pets[gen.Next(Pets.Count)]();
         ReadKey();
-
-        //WriteLine($"{Pets[random.Next(Pets.Count)]();}");
-
     }
 
     public void PetGenerator2()
@@ -60,15 +43,10 @@ public class Pet
         var Pets = new List<Action> { IntroBeaver };//IntroQuail
         Pets[gen.Next(Pets.Count)]();
         ReadKey();
-
-        //WriteLine($"{Pets[random.Next(Pets.Count)]();}");
-
     }
 
-   
     Art currentArt = new Art();
    
-
     public void IntroAardvark()
     {
         Clear();
@@ -99,7 +77,6 @@ public class Pet
         Utility.Spacing("You need 3 friends to get home quickly");
         //Utility.Spacing("Press enter to continue your journey...");
     }
-
 
     public void IntroCapybara()
     {
@@ -140,8 +117,6 @@ public class Pet
         Utility.Spacing($"You have found a friend!");
         ReadKey();
         Clear();
-
-
         Clear();
         ForegroundColor = ConsoleColor.DarkGreen;
         BackgroundColor = ConsoleColor.Cyan;
@@ -156,7 +131,6 @@ public class Pet
         Utility.Spacing("Barry:'I was so scared! I thought I would never see you again.'");
         ReadKey();
         Clear();
-
         Utility.TopSpaces();
         Utility.Spacing($"You have found {totalPets} of your friends");
         Utility.Spacing("You need 3 friends to get home quickly");
@@ -269,14 +243,16 @@ public class Pet
         
         if (totalPets == 3)
         {
-            Utility.Spacing("Yay you have found all your friends!");
+            Utility.Spacing("Yay! You have found all your friends!");
             ReadKey();
             ForegroundColor = ConsoleColor.Yellow;
             BackgroundColor = ConsoleColor.Blue;
             Clear();
-            
-            
-            Utility.Spacing($"Congratulations! You have successfully made it home!");
+
+            Utility.Spacing("Working together you find your way home much quicker.");
+            ReadKey();
+            Clear();
+            Utility.Spacing($"Congratulations! You have successfully made it home with your friends!");
             WriteLine(@"
 
                                                                  8o88o          __
@@ -299,16 +275,6 @@ public class Pet
 
             ReadKey();
             Environment.Exit(0); 
-
-            
-
-            /*end game here 
-             * show end game 
-             * game.endgame + print a message explaining it
-             * 
-             * 
-             * */
-
         }
         else if (totalPets <= 2)
         {

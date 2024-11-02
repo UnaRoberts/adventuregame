@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AdventureGame.Art">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAECAAAAGAAAAgAAAAAAAECAAAAAAAAAAAAACBAg=</HashCode>
+      <FileName>Art.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Forest">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAIAAAAAAAgAAAAAAAAAAgAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Forest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TriviaGame.Game">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAEAAAAACCAACAAQAEAEAAAJAAAABAAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Headings">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Headings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pet">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AA8AABAAAAQAAAAAAAAgQCEAAAAAAQIBAIAAAAAAAAA=</HashCode>
+      <FileName>Pets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAgAAAAQAAAAAAAgIAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Program">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.RunQuestions">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQAAAAAAAEAAAAAAAAAEAAAAABIJAACAAAIAAAA=</HashCode>
+      <FileName>RunQuestions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Utility">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEQBAAAAAAAAAAAAAAAAAAAAAACCAAQAAAAAIAAAA=</HashCode>
+      <FileName>Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Spring">
+    <Position X="14.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAgAAAAAAAQAIAAAAAAAAAAI=</HashCode>
+      <FileName>Spring.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Summer">
+    <Position X="10.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAgAAAAAAAQAIAAAAAAAAAAI=</HashCode>
+      <FileName>Summer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Winter">
+    <Position X="12.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAgAAAAAAAQAIAAAAAAAAAAI=</HashCode>
+      <FileName>Winter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Autumn">
+    <Position X="9" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAgAAAAAAAQAIAAAAAAAAAAI=</HashCode>
+      <FileName>Autumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Season">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAgAAAAAAAQABAAAAAAAAAAI=</HashCode>
+      <FileName>Season.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

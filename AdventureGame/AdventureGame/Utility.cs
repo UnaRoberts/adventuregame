@@ -11,7 +11,6 @@ namespace AdventureGame
     {
         public static void MoveOn()
         {
-
             ReadKey();
             Clear();
         }
@@ -47,9 +46,6 @@ namespace AdventureGame
         
         public static int deathcount;
        
-
-
-
         public static void CheckDeath()
         {
             Clear();
@@ -57,7 +53,7 @@ namespace AdventureGame
             BackgroundColor = ConsoleColor.Black;
             Clear();
 
-            Console.Beep();//credit
+            Console.Beep();//Logan ACT
 
             WriteLine(@"
 
@@ -78,8 +74,6 @@ namespace AdventureGame
         {
             if (deathcount == 1)
             {
-                
-                
                     Write(@"
                                                 _   _         _   _        
                                               /   V   \     /   V   \    
@@ -98,7 +92,6 @@ namespace AdventureGame
 ");
                     ForegroundColor = ConsoleColor.Red;
                 
-
                 Utility.Spacing($"You have died {deathcount} time. You have 2 lives left.");
                 ReadKey();
                 //Utility.Spacing("An ominous source delivers you back to the start of the Autumn forest.");

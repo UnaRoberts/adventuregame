@@ -45,7 +45,6 @@ namespace AdventureGame
 
         public void SpringHeading()
         {
-            //Clear();
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.BackgroundColor = ConsoleColor.White;
             Utility.centerHeading("");
@@ -57,7 +56,6 @@ namespace AdventureGame
             Utility.centerHeading("");
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkGreen;
-            //Clear();
             Utility.TopSpaces();
         }
 
@@ -76,7 +74,6 @@ namespace AdventureGame
             Console.BackgroundColor = ConsoleColor.Yellow;
 
             Utility.TopSpaces();
-        }
-
+         }
     }
-    }
+}

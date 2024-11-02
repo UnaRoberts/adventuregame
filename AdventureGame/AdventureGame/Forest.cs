@@ -13,7 +13,6 @@ namespace AdventureGame
     {
         public string ForestType;
         public string ColorTheme;
-        //Game PlayerGame = new Game();
         Player player;
         public Forest(string forestType, Player player)
 
@@ -40,6 +39,7 @@ namespace AdventureGame
 
                     case "Winter":
                         Title = "Winter Forest";
+                        Console.Clear();
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
                         Console.BackgroundColor = ConsoleColor.White;
                         Console.Clear();
@@ -47,6 +47,7 @@ namespace AdventureGame
 
                     case "Spring":
                         Title = "Spring Forest";
+                        Console.Clear();
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.BackgroundColor = ConsoleColor.DarkGreen;
                         Console.Clear();
@@ -60,30 +61,36 @@ namespace AdventureGame
                         break;
                 }
 
-               
-
-                Question currentQuestion = new Question(player);
+                RunQuestions currentQuestion = new RunQuestions(player);
 
                 switch (ForestType)
                 {
 
                     case "Autumn":
 
-                        currentQuestion.AutumnQuestions();
-                       
+                        Autumn autumn = new Autumn(player);
+                        autumn.Run();
+                        //currentQuestion.AutumnQuestions();
+
                         break;
 
                     case "Winter":
-                        currentQuestion.WinterQuestions();
+                        Winter winter = new Winter(player);
+                        winter.Run();
+                        //currentQuestion.WinterQuestions();
                         break;
 
                     case "Spring":
-                        currentQuestion.SpringQuestions();
+                        Spring spring = new Spring(player);
+                        spring.Run();
+                        //currentQuestion.SpringQuestions();
                         break;
 
                     case "Summer":
-                       
-                        currentQuestion.SummerQuestions();
+
+                        Summer summer = new Summer(player);
+                        summer.Run();
+                        //currentQuestion.SummerQuestions();
                         break;
                 }
 
@@ -91,8 +98,6 @@ namespace AdventureGame
                 ReadKey();
             }
         }
-
-      
 
         public void forestTransition()
         {
@@ -133,51 +138,13 @@ namespace AdventureGame
 
                     break;
 
-                case "Summer":
-                    WriteLine("");
-                    break;
+                //case "Summer":
+                //    WriteLine("");
+                //    break;
             }
-
-
-
 
             ReadKey();
 
         }
-
-
-        public void returnToForestColors()
-        {
-            switch (ForestType)
-            {
-
-                case "Autumn":
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.Clear();
-                    break;
-
-                case "Winter":
-                    Console.ForegroundColor = ConsoleColor.DarkBlue;
-                    Console.BackgroundColor = ConsoleColor.White;
-                    Console.Clear();
-                    break;
-
-                case "Spring":
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                    Console.Clear();
-                    break;
-
-                case "Summer":
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.Clear();
-                    break;
-            }
-
-        }
     }
-
 }
